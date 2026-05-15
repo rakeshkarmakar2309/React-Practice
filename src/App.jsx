@@ -1,9 +1,10 @@
+import MultiSelectForm from "./layouts/MultiSelectForm"
 
 function App() {
 
   return (
     <>
-    <div className="hello">Hello, React!</div>
+    <MultiSelectForm />
     </>
   )
 }
