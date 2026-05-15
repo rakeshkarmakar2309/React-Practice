@@ -1,5 +1,8 @@
 import { useState } from "react";
 import {useMultistepForm} from "../utils/useMultistepForm";
+import UserDetails from "./pages/UserDetails";
+import Address from "./pages/Address";
+import AccountDetails from "./pages/AccountDetails";
 const MultiSelectForm = () => {
 
   const [formData, setFormData]= useState({
@@ -12,11 +15,11 @@ const MultiSelectForm = () => {
     password: "",
   })
 
-  const multiStepForm=useMultistepForm([<div>one</div>,<div>two</div>,<div>three</div>]);
+  const multiStepForm=useMultistepForm([<UserDetails />,<Address />,<AccountDetails />]);
 
   return (
     <>
-    <div>hi {multiStepForm.currentStepIndex}</div>
+    <div>current step: {multiStepForm.currentStepIndex +1}/{multiStepForm.steps.length}</div>
     <button onClick={multiStepForm.prev}>Prev</button>
     <button onClick={multiStepForm.next}>Next</button>
     </>
